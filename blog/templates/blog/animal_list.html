@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<div class="page-header">
+    <h1><a href="/">Bienvenue à l'animalerie</a></h1>
+</div>
+<br>
+<div>
+    <p><strong>les animaux </strong></p>
+<div>
+    {% for animal in animals %}
+    <div>
+        <a href="{% url 'animal_detail' id_animal=animal.id_animal %}">{{ animal.id_animal }}</a> <br>
+        {{animal.etat}},  {{animal.lieu}} <br>
+        
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}
